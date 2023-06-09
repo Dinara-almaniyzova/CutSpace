@@ -1,0 +1,99 @@
+.cta {
+    padding-top: 77px;
+    padding-bottom: 72px;
+}
+
+
+.cta__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    background-color: #58BEBF;
+    border-radius: 20px;
+    color: white;
+}
+
+.cta__img {
+    border: 25px solid white;
+    margin-top: 60px;
+    border-radius: 0px 20px;
+    border-left: 0px;
+    border-bottom: 0px;
+}
+
+.cta__text {
+    background: url(./../img/oval/ovals.svg) top right no-repeat, url(./../img/oval/oval.svg) bottom left -186px no-repeat;
+
+    width: 555px;
+    box-sizing: border-box;
+    padding-left: 95px;
+    padding-right: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+        width: 320px;
+    }
+}
+
+.cta__title {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.cta__btn-row {
+    margin-top: 30px;
+    display: flex;
+    column-gap: 20px;
+}
+
+
+
+@media (max-width:768px) {
+    .cta {
+        padding-bottom: 37px;
+    }
+
+    .button--play::before {
+        left: 17px;
+    }
+}
+
+@media (max-width:465px) {
+    .cta__img {
+        order: 2;
+        margin-right: 76px;
+        margin-top: 16px;
+    }
+
+    .cta__block {
+        flex-direction: column;
+    }
+
+    .cta__text {
+        padding-left: 15px;
+        padding-top: 20px;
+        width: 440px;
+    }
+}
+
+@media (max-width:320px) {
+    .cta__title {
+        font-size: 28px;
+        max-width: 280px;
+    }
+
+    .cta__text p {
+        font-size: 14px;
+        max-width: 280px;
+    }
+
+    .cta__btn-row {
+        flex-direction: column;
+        width: fit-content;
+        row-gap: 15px;
+    }
+}

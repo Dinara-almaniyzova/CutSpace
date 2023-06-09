@@ -1,0 +1,59 @@
+.button {
+    display: inline-block;
+    height: 58px;
+    padding: 0px 38px;
+    border-radius: 29px;
+    background-color: $accent-color;
+    line-height: 58px;
+    font-weight: 700;
+    color: white;
+    transition: .2s ease;
+
+    &:hover {
+        background-color: $accent-color-hover;
+    }
+
+    &--white {
+        background-color: #fff;
+        color: $black-text;
+        transition: .2s ease-in-out;
+
+        &:hover {
+            background-color: $black-text;
+            color: #fff;
+        }
+    }
+
+    &--play {
+        padding-left: 50px;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 12px;
+            background-image: url(./../img/clc/play.svg);
+            background-size: initial;
+            background-repeat: no-repeat;
+
+            position: absolute;
+            top: 23px;
+            left: 30px;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .button {
+        padding: 0px 34px;
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width:320px) {
+    .button--play {
+        transform: translateX(100px);
+    }
+}

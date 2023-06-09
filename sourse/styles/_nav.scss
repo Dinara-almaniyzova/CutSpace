@@ -1,0 +1,157 @@
+.nav {
+    padding: 35px 0px;
+}
+
+.nav__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__burger-btn {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+
+    span {
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        background-color: black;
+        left: 5px;
+        transition: transform .5s, opacity .5s, background-color .5s;
+    }
+
+    span:nth-child(1) {
+        transform: translateY(-10px);
+    }
+
+    span:nth-child(3) {
+        transform: translateY(10px);
+    }
+}
+
+.nav {
+    &.open {
+        .nav__burger-btn span {
+            background-color: #323232;
+        }
+
+        .nav__burger-btn span:nth-child(1) {
+            transform: translateY(0) rotate(45deg);
+        }
+
+        .nav__burger-btn span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav__burger-btn span:nth-child(3) {
+            transform: translateY(0) rotate(-45deg);
+        }
+    }
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+
+    img {
+        margin-right: 4px;
+    }
+}
+
+.navigation-list {
+    ul {
+        display: flex;
+    }
+
+    li {
+        margin-right: 42px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    a {
+        &.active {
+            color: $accent-color ;
+            font-weight: 700;
+        }
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .navigation-list li {
+        margin-right: 30px;
+    }
+
+}
+
+@media (max-width:465px) {
+    .nav__burger-btn {
+        display: block;
+        z-index: 2;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .navigation-list ul {
+        font-size: 14px;
+        display: block;
+    }
+
+    .navigation-list {
+        position: absolute;
+        top: 0;
+        left: -280px;
+        background-color: $accent-color;
+        padding: 100px 20px 20px 20px;
+        width: 280px;
+        transition: .3s ease-in-out;
+    }
+
+    .navigation-list {
+        a {
+            font-size: 21px;
+            color: #fff;
+            padding: 10px 0px;
+            display: block;
+        }
+
+        a {
+            &.active {
+                color: #323232;
+                font-weight: 700;
+            }
+
+            &:hover {
+                color: #323232;
+            }
+        }
+
+    }
+
+    .nav {
+        &.open .navigation-list {
+            transform: translateX(100%);
+        }
+    }
+}
